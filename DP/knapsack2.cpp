@@ -18,10 +18,8 @@
 using namespace std;
 using ll = long long;
 using P = pair<ll,ll>;
-#define _upgrade ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define all(x) (x).begin(), (x).end()
 #define UNIQUE(v) v.erase( unique(v.begin(), v.end()), v.end() );
-#define pb push_back
 //ll gcd(ll a, ll b){return b?gcd(b,a%b):a;}
 //ll lcm(ll x, ll y) {return x / gcd(x, y) * y;}
 const int dx[4] = {1,0,-1,0};
@@ -29,8 +27,6 @@ const int dy[4] = {0,1,0,-1};
 const ll mod = 1e9 + 7;
 const ll inf = 1LL << 60;
 const long double pi = 3.14159265358979323846;
-template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
-template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
 
 // ****************************************CODE***************************************//
 
@@ -50,7 +46,9 @@ int main() {
     for(int i = 0; i < n; i++){
         for(int sum_v = 0; sum_v < 100100; sum_v++) {
 
-            if(sum_v - value[i] >= 0) dp[i+1][sum_v] = min(dp[i+1][sum_v], dp[i][sum_v - value[i]] + weight[i]);
+            if(sum_v - value[i] >= 0) {
+                dp[i+1][sum_v] = min(dp[i+1][sum_v], dp[i][sum_v - value[i]] + weight[i]);
+            }
 
             dp[i+1][sum_v] = min(dp[i+1][sum_v], dp[i][sum_v]);
         }
