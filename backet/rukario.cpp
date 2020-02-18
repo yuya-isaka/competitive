@@ -37,7 +37,7 @@ int main() {
     cin >> n >> w;
     for(int i = 0; i < n; i++) cin >> weight[i] >> value[i];
 
-    for(int i = 0; i < n; i ++) for(int j = 0; j < 100100; j++) dp[i][j] = inf;
+    for(int i = 0; i < 110; i++) for(int j = 0; j < 100100; j++) dp[i][j] = inf;
 
     dp[0][0] = 0;
     for(int i = 0; i < n; i++){
