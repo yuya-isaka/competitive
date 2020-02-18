@@ -38,7 +38,6 @@ int main() {
     cin >> n;
     for(int i = 0; i < n; i++) cin >> h[i];
     for(int i = 0; i < 100100; i++) dp[i] = inf;
-
     dp[0] = 0;
     for(int i = 0; i < n; i++){
         dp[i+1] = min(dp[i+1], dp[i] + abs(h[i] - h[i+1]));
