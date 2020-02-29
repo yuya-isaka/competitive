@@ -13,12 +13,6 @@ sys.setrecursionlimit(200000)
 input = sys.stdin.readline
 # template
 
-def retmax(a, b):
-    if a > b:
-        return a
-    else:
-        return b
-
 def main():
     n = int(input())
     a = [list(map(int, input().split())) for _ in range(n)]
@@ -29,7 +23,7 @@ def main():
         for j in range(3):
             for k in range(3):
                 if j != k:
-                    dp[k, i+1] = retmax(dp[k, i+1], dp[j, i] + a_l[k])
+                    dp[k, i+1] = max(dp[k, i+1], dp[j, i] + a_l[k])
 
     print(int(np.max(dp[:, n], axis=0)))
 
