@@ -11,6 +11,7 @@ from copy import deepcopy #参照で影響されないコピー
 from collections import Counter, deque, defaultdict #要素ごとの出現回数、双方向アクセス可能データ型
 from functools import reduce
 mod = 1000000007
+inf = 10**10
 sys.setrecursionlimit(1000000)
 
 input = sys.stdin.readline
