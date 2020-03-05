@@ -14,13 +14,3 @@ for i in range(1 << n):
 u = set(ans)
 for i in range(q):
     print("yes" if m[i] in u else "no")
-
-
-abc = set(input().split())
-
-if len(abc) == 2:
-    print("Yes")
-else:
-    print("No")
-
-
