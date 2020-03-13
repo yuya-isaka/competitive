@@ -3,11 +3,8 @@ import sys
 sys.setrecursionlimit(10**5)
 
 
-def bfs(x, y):
-    # global w, h, data
-
-    que = deque()
-    que.append((x, y))
+def bfs():
+    # global w, h, data, que
 
     while len(que):
         x, y = que.popleft()
@@ -35,7 +32,9 @@ while True:
     for x in range(h):
         for y in range(w):
             if data[x][y] == 1:
+                que = deque()
+                que.append((x, y))
                 ans += 1
-                bfs(x, y)
+                bfs()
 
     print(ans)
